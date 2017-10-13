@@ -78,7 +78,21 @@ button {
 /* Scoreboard */
 
 .tries {
-  background-image: url('/liveHeart.png');
+  background-image: url('../images/liveHeart.png');
+  background-size: 35px 30px;
+  background-repeat: no-repeat;
+  height: 35px;
+  width: 36.5px;
+  transition: .4s;
+}
+
+.lost__heart {
+  background-image: url('../images/lostHeart.png');
+  background-size: 35px 30px;
+  background-repeat: no-repeat;
+  height: 35px;
+  width: 36.5px;
+  transition: .3s;
 }
 
 /* Phrase */
@@ -98,10 +112,18 @@ button {
   width: 15px;
 }
 
+@keyframes reveal {
+    0%   {transform: scale(.3);}
+    75%  {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
+
 .show {
   color: #000;
   background-color: #76CE82;
+  animation: reveal .55s ease-in;
 }
+
 
 /* Keyboard */
 
@@ -117,7 +139,8 @@ button {
   color: #FFFFFF;
 }
 
-.btn__reset {
+.btn__reset,
+.play__again {
   padding: 8px;
   margin: 50px auto;
   background: #FFFFFF;
@@ -128,7 +151,9 @@ button {
 
 /* Overlay */
 
-#overlay {
+#overlay,
+#win,
+#lose {
   display: flex;
   flex-direction: column;
   position: fixed;
