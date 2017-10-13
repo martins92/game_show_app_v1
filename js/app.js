@@ -145,7 +145,7 @@ keyboard.addEventListener('click', (e)=> {
       missed += 1;
       console.log('Better luck next time! ' + missed + ' wrong answer(s).');
       lostHeart -= 1;
-      setTimeout(removeHeart(lostHeart), 2000);
+      removeHeart(lostHeart);
     }
     checkWin();
   }
